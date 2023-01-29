@@ -4,13 +4,14 @@ import cat from '../../../assets/images/cat2.png';
 
 const DashboardLastCat = () => {
     return (
-        <div className='cusom-card-container mt-3'>
+        <div className='cusom-card-container'>
             <Col xs={12} lg={12}>
                 <div className='card custom-card'>
                     <div className='card-body'>
                         <div className='card-item custom-card-item'>
                             <div className='card-item-content'>
                                 <h5>أحدث التصنيفات</h5>
+                                <p>أحدث التصنيفات المضافة مؤخرا</p>
                                 <div className="admin-recent-order new">
                                     <div className="order-img-user online">
                                         <img alt="avatar" src={cat} />

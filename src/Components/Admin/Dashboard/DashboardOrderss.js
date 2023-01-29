@@ -72,21 +72,6 @@ const DashboardOrders = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="admin-recent-order new">
-                                    <div className="order-img-user online">
-                                        <img alt="avatar" src={user} />
-                                    </div>
-                                    <div className="admin-recent-order-body">
-                                        <div>
-                                            <p><strong>أحمد حسن</strong></p>
-                                            <p><small>#2145</small></p>
-                                        </div>
-                                        <div className='d-flex flex-column align-items-end'>
-                                            <p><strong>1400ج.م</strong></p>
-                                            <p><small>15 أكتوبر - 4:21 م</small></p>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

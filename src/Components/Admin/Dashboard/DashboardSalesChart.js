@@ -37,7 +37,7 @@ const DashboardSalesChart = () => {
     return (
         <div className='cusom-card-container my-3'>
             <Col xs={12} lg={12}>
-                <div className='card custom-card'>
+                <div className='card custom-card sales-chart'>
                     <div className='card-body'>
                         <div className='card-item custom-card-item'>
                             <div className='card-item-content'>
@@ -47,6 +47,7 @@ const DashboardSalesChart = () => {
                             </div>
                         </div>
                         <LineChart
+                            className='w-100'
                             width={chartWidth}
                             height={400}
                             data={data}
@@ -54,7 +55,7 @@ const DashboardSalesChart = () => {
                         >
                             <XAxis dataKey="name" />
                             <Tooltip />
-                            <CartesianGrid stroke="#272a88" />
+                            <CartesianGrid stroke="#C0C0C0" />
                             <Line type="monotone" dataKey="uv" stroke="#ff7300" yAxisId={0} />
                             <Line type="monotone" dataKey="pv" stroke="#387908" yAxisId={1} />
                         </LineChart>

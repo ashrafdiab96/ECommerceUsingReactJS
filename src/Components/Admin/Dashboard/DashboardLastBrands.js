@@ -4,13 +4,14 @@ import brand from '../../../assets/images/brand1.png';
 
 const DashboardLastBrands = () => {
     return (
-        <div className='cusom-card-container my-3'>
+        <div className='cusom-card-container'>
             <Col xs={12} lg={12}>
                 <div className='card custom-card'>
                     <div className='card-body'>
                         <div className='card-item custom-card-item'>
                             <div className='card-item-content'>
                                 <h5>أحدث الماركات</h5>
+                                <p>أحدث الماركات المضافة مؤخرا</p>
                                 <div className="admin-recent-order new">
                                     <div className="order-img-user online">
                                         <img alt="avatar" src={brand} />

@@ -20,50 +20,48 @@ const AdminDashboard = () => {
                 </Col>
             </Row>
             <Row>
-                <Col xs={12} sm={12} md={8} lg={8}>
-                    <Row>
-                        <Col xs={12} lg={12}>
-                            <DashboardIntro />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={12} lg={12}>
-                            <DashboardCard />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={12} lg={12}>
-                            <DashboardSalesChart />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={12} sm={12} md={6}>
-                            <DashboardOrdersChart />
-                        </Col>
-                        <Col xs={12} sm={12} md={6}>
-                            <DashboardMostSalesChart />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={12} lg={12}>
-                            <DashboardUsersTable />
-                        </Col>
-                    </Row>
-                </Col>          
-                <Col xs={12} sm={12} md={4} lg={4}>
-                    <Row>
-                        <DashboardOrders />
-                    </Row>
-                    <Row>
-                        <DashboardProjectLaunch />
-                    </Row>
-                    <Row>
-                        <DashboardLastCat />
-                    </Row>
-                    <Row>
-                        <DashboardLastBrands />
-                    </Row>
+                <Col xs={12} lg={12}>
+                    {/* <DashboardIntro /> */}
                 </Col>
+            </Row>
+            <Row>
+                <Col xs={12} lg={12}>
+                    <DashboardCard />
+                </Col>
+            </Row>
+            <Row>
+                <Col xs={12} lg={12}>
+                    <DashboardSalesChart />
+                </Col>
+            </Row>       
+            <Row>
+                <Col xs={12} sm={12} md={4}>
+                    <DashboardOrdersChart />
+                </Col>
+                <Col xs={12} sm={12} md={4}>
+                    <DashboardMostSalesChart />
+                </Col>
+                <Col xs={12} sm={12} md={4}>
+                    <DashboardProjectLaunch />
+                </Col>
+            </Row>
+            <Row>
+                <Col xs={12} lg={12}>
+                    <DashboardUsersTable />
+                </Col>
+            </Row>
+            <Row className='mb-3'>
+                {/* <Col xs={12} sm={12} md={1}></Col> */}
+                <Col xs={12} sm={12} md={6}>
+                    <DashboardOrders />
+                </Col>
+                {/* <Col xs={12} sm={12} md={2}> */}
+                    {/* <DashboardLastBrands /> */}
+                {/* </Col> */}
+                <Col xs={12} sm={12} md={6}>
+                    <DashboardLastCat />
+                </Col>
+                {/* <Col xs={12} sm={12} md={1}></Col> */}
             </Row>
         </div>
     );

@@ -17,20 +17,20 @@ const DashboardOrdersChart = () => {
                         <div className='card-item custom-card-item'>
                             <div className='card-item-content'>
                                 <div>
-                                    <h5>حالة توصيل الطلبات</h5>
+                                    <h5 className='m-0'>حالة توصيل الطلبات</h5>
                                 </div>
                             </div>
                         </div>
                         <Row>
                             <Col xs={12} lg={6}>
-                                <PieChart width={150} height={155}>
+                                <PieChart width={150} height={141}>
                                     <Pie 
                                         data={data} 
                                         cx={65} 
                                         cy={65}
                                         labelLine={false}
-                                        innerRadius={53} 
-                                        outerRadius={68}
+                                        innerRadius={45}
+                                        outerRadius={65}
                                         fill="#ededed"
                                         textAnchor='end'
                                     >
