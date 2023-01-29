@@ -10,14 +10,14 @@ const AdminProductsCard = () => {
                 <Row className="d-flex justify-content-center px-2">
                     <Col className="d-flex justify-content-between">
                         <div className="d-inline item-delete-edit">
-                            <button className='btn btn-danger btn-sm btn-flat'>
-                                <i className="fa fa-trash"></i>
-                            </button>
+                            {/* <button className='btn btn-danger btn-sm btn-flat'> */}
+                                <i className="fa fa-trash text-danger"></i>
+                            {/* </button> */}
                         </div>
                         <div className="d-inline item-delete-edit">
-                            <button className='btn btn-warning btn-sm btn-flat'>
-                                <i className="fas fa-edit"></i>
-                            </button>
+                            {/* <button className='btn btn-warning btn-sm btn-flat'> */}
+                                <i className="fas fa-edit text-warning"></i>
+                            {/* </button> */}
                         </div>
                     </Col>
                 </Row>
@@ -30,11 +30,11 @@ const AdminProductsCard = () => {
                             </div>
                         </Card.Title>
                         <Card.Text>
-                            <div className="d-flex justify-content-between">
+                            <div className="d-flex justify-content-between align-items-center">
                                 <div className="card-rate">4.5</div>
-                                <div className="d-flex">
-                                    <div className="card-currency mx-1">جنيه</div>
+                                <div className="d-flex justify-content-center align-items-center">
                                     <div className="card-price">880</div>
+                                    <div className="card-currency mx-1">جنيه</div>
                                 </div>
                             </div>
                         </Card.Text>

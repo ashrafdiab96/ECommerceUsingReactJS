@@ -59,7 +59,7 @@ const AdminAddProduct = () => {
                         </select>
 
                         <Multiselect
-                            className="mt-2 text-end admin-add-multi-select"
+                            className="mt-3 text-end admin-add-multi-select"
                             placeholder="التصنيف الفرعي"
                             options={options}
                             onSelect={onSelect}

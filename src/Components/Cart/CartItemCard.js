@@ -3,7 +3,7 @@ import mobile from '../../assets/images/mobile.png';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const CartItemCard = () => {
+const CartItemCard = ({ qtyAddClass, qtyShowClass }) => {
     const [itemQty, setItemQty] = useState(1);
     const notify = (message, type) => {
         if (type === 'error') {
@@ -51,12 +51,12 @@ const CartItemCard = () => {
             <td>
                 <div className='d-flex justify-content-center align-items-center'>
                     <div
-                        className='d-inline cart-qty-add'
+                        className={`d-inline cart-qty-add ${qtyAddClass}`}
                         onClick={increaseQty}
                     >+</div>
-                    <div className='d-inline cart-qty-show'>{itemQty}</div>
+                    <div className={`d-inline cart-qty-show ${qtyShowClass}`}>{itemQty}</div>
                     <div
-                        className='d-inline cart-qty-add'
+                        className={`d-inline cart-qty-add ${qtyAddClass}`}
                         onClick={decreaseQty}
                     >-</div>
                 </div>

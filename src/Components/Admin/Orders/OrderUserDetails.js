@@ -39,7 +39,7 @@ const OrderUserDetails = () => {
                 <div className="d-inline d-flex align-items-center justify-content-center text-center">
                     <span
                         className='py-2 px-5'
-                        style={{ backgroundColor: '#FFFFFF' }}
+                        style={{ backgroundColor: '#170c6b', color: '#FFFFFF' }}
                     >المجموع ٤٠٠٠ جنيه</span>
                 </div>
                 <div className="d-flex mt-2 justify-content-center align-items-center">

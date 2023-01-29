@@ -10,7 +10,10 @@ const AdminSideBar = () => {
         <div className="admin-sidebar">
             <div className="d-flex flex-column">
                 <div>
-                    <h3 className='admin-layout-title'>لوحة التحكم</h3>
+                    <p className='admin-layout-title'>
+                        <span>لوحة التحكم</span>
+                        <div className='MuiDivider-root MuiDivider-fullWidth MuiDivider-light rtl-1ufgr6a'></div>
+                    </p>
                 </div>
                 <Link to="/admin/dashboard" style={{ textDecoration: 'none' }}>
                     <div

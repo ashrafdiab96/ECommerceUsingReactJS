@@ -1,22 +1,30 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Spinner } from 'react-bootstrap';
 import SubTitle from '../Utilities/SubTitle';
 import BrandCard from './BrandCard';
-import brand1 from '../../assets/images/brand1.png';
-import brand2 from '../../assets/images/brand2.png';
-import brand3 from '../../assets/images/brand3.png';
+import BrandsFeatureHook from '../../hook/brands/brands-feature-hook';
 
 const BrandFeatures = ({ title, btnTitle }) => {
+    const [brands, loading] = BrandsFeatureHook();
+
     return (
         <Container>
             <SubTitle title={title} btnTitle={btnTitle} pathText='/brands' />
             <Row className='my-2 d-flex justify-content-between'>
-                <BrandCard img={brand1} />
-                <BrandCard img={brand2} />
-                <BrandCard img={brand3} />
-                <BrandCard img={brand1} />
-                <BrandCard img={brand2} />
-                <BrandCard img={brand3} />
+                {
+                    loading === false ? (
+                        brands.data?.length >= 1 ? (
+                            brands.data.slice(0,8).map((item) => {
+                                return (
+                                    <BrandCard
+                                        img={item.image}
+                                        key={item._id}
+                                    />
+                                )
+                            })
+                        ) : <h4 className='alert alert-danger text-center'>لا توجد بيانات</h4>
+                    ) : <Spinner animation='border' variant='primary' className='m-auto' />
+                }
             </Row>
         </Container>
     );

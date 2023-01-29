@@ -4,10 +4,10 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CartItemCard from './CartItemCard';
 
-const CartItem = () => {
+const CartItem = ({ customClass, qtyAddClass, qtyShowClass }) => {
     return (
-        <Col xs="12" className='cart-table-div my-2 px-2'>
-             <Table responsive className='cart-table'>
+        <Col xs="12" className={`cart-table-div my-2 px-2 ${customClass}`}>
+             <Table responsive className={`cart-table ${customClass}`}>
                 <thead>
                     <tr>
                         <th>المنتج</th>
@@ -18,9 +18,9 @@ const CartItem = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <CartItemCard />
-                    <CartItemCard />
-                    <CartItemCard />
+                    <CartItemCard qtyAddClass={qtyAddClass} qtyShowClass={qtyShowClass} />
+                    <CartItemCard qtyAddClass={qtyAddClass} qtyShowClass={qtyShowClass} />
+                    <CartItemCard qtyAddClass={qtyAddClass} qtyShowClass={qtyShowClass} />
                 </tbody>
             </Table>
             <ToastContainer />

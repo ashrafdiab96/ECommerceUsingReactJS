@@ -29,15 +29,18 @@ const DashboardOrdersChart = () => {
                                         cx={65} 
                                         cy={65}
                                         labelLine={false}
-                                        innerRadius={57} 
-                                        outerRadius={71}
+                                        innerRadius={53} 
+                                        outerRadius={68}
                                         fill="#ededed"
                                         textAnchor='end'
                                     >
                                         {
                                             data.map((entry, index) => {
                                                 return (
-                                                    <Cell fill={COLORS[index % COLORS.length]}/>
+                                                    <Cell
+                                                        fill={COLORS[index % COLORS.length]}
+                                                        key={index}
+                                                    />
                                                 );
                                             })
                                         }

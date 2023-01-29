@@ -16,7 +16,7 @@ const AdminDashboard = () => {
         <div style={{ minHeight: '670px' }}>
             <Row>
                 <Col sm={12} className='my-2'>
-                    <h4>الداشبورد</h4>
+                    <h4 className='admin-products-title'>الداشبورد</h4>
                 </Col>
             </Row>
             <Row>

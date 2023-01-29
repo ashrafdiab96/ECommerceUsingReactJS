@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import { Col, Container, Offcanvas, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import user from '../../assets/images/user.png';
+import AllCategoryPageHook from '../../hook/categories/all-category-page-hook';
 
 const CategoryHeader = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [categories, loading, pageCount, getPage] = AllCategoryPageHook();
 
     return (
         <div className='category-header text-center'>
@@ -14,15 +16,19 @@ const CategoryHeader = () => {
                 <Row className='d-flex justify-content-center align-items-center'>
                     <Col xs={10} sm={10} md={8} className='d-flex justify-content-start flex-wrap py-2'>
                         <div className='cat-text-header'>الكل</div>
-                        <div className='cat-text-header'>الكترونيات</div>
-                        <div className='cat-text-header'>ملابس</div>
-                        <div className='cat-text-header'>كهربية</div>
-                        <div className='cat-text-header'>تخفيضات</div>
-                        <div className='cat-text-header'>تخفيضات</div>
-                        <div className='cat-text-header'>تخفيضات</div>
-                        <div className='cat-text-header'>تخفيضات</div>
-                        <div className='cat-text-header'>تخفيضات</div>
-                        <div className='cat-text-header'>المزيد</div>
+                        {
+                            loading === false ? (
+                                categories.data?.length >= 1 ? (
+                                    categories.data.slice(0, 6).map((item) => {
+                                        return (
+                                            <div
+                                                className='cat-text-header'
+                                                key={item._id}
+                                            >{item.name}</div>)
+                                        })
+                                ) : null
+                            ) : null
+                        }
                     </Col>
                     <Col xs={2} sm={2} md={4} className='d-flex justify-content-end align-items-center'>
                         <div>
@@ -81,31 +87,19 @@ const CategoryHeader = () => {
                         <li>
                             <h5 className='cat-text-title'>جميع التصنيفات</h5>
                         </li>
-                        <li>
-                            <Link className='text-decoration-none'>
-                                <div className='cat-text-side'>الكترونيات</div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className='text-decoration-none'>
-                                <div className='cat-text-side'>ملابس</div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className='text-decoration-none'>
-                                <div className='cat-text-side'>كهربية</div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className='text-decoration-none'>
-                                <div className='cat-text-side'>لابتوب</div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className='text-decoration-none'>
-                                <div className='cat-text-side'>موبايلات</div>
-                            </Link>
-                        </li>
+                        {
+                            loading === false ? (
+                                categories.data?.length >= 1 ? (
+                                    categories.data.slice(0, 6).map((item) => {
+                                        return (
+                                            <Link key={item._id} className='text-decoration-none'>
+                                                <div className='cat-text-side'>{item.name}</div>
+                                            </Link>
+                                        )
+                                    })
+                                ) : null
+                            ) : null
+                        }
                     </ul>
                     <div className='category-side-line'></div>
                     <ul className='list-unstyled p-0'>

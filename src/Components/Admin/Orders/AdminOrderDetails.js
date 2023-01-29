@@ -5,7 +5,11 @@ import OrderUserDetails from './OrderUserDetails';
 const AdminOrderDetails = () => {
     return (
         <div>
-            <CartItem />
+            <CartItem
+                customClass=' admin-cart-table-div'
+                qtyAddClass=' admin-cart-qty-add'
+                qtyShowClass=' admin-cart-qty-show'
+            />
             <OrderUserDetails />
         </div>
     );
