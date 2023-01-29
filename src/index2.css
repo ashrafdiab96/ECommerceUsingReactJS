@@ -1752,3 +1752,19 @@ textarea {
     position: absolute;
     z-index: -1;
 }
+
+.sales-chart {
+    width: 75%;
+    margin: auto;
+}
+
+@media (max-width: 992px) {
+    .sales-chart {
+        width: 100%;
+    }
+}
+
+.sales-chart .recharts-surface {
+    width: 100% !important;
+    margin: 0 !important;
+}
