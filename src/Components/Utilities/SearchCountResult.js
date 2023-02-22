@@ -2,8 +2,13 @@ import React from 'react';
 import UnopDropdown from 'unop-react-dropdown';
 import sort from '../../assets/images/sort.png';
 
-const SearchCountResult = ({ title }) => {
+const SearchCountResult = ({ title, onClick }) => {
     const handler = () => {};
+
+    const sortProducts = (sortType) => {
+        localStorage.setItem('sortType', sortType);
+        onClick();
+    };
     
     return (
         <div className='d-flex justify-content-between pt-3 px-2'>
@@ -29,10 +34,26 @@ const SearchCountResult = ({ title }) => {
                     hover
                 >
                 <div className='card-filter'>
-                    <div className='card-filter-item border-bottom'>الأكثر مبيعا</div>
-                    <div className='card-filter-item border-bottom'>الأعلى تقييما</div>
-                    <div className='card-filter-item border-bottom'>السعر من الأقل للأعلى</div>
-                    <div className='card-filter-item'>السعر من الأعلى للأقل</div>
+                    <div
+                        className='card-filter-item border-bottom'
+                        onClick={() => sortProducts('without sorting')}    
+                    >بدون ترتيب</div>
+                    <div
+                        className='card-filter-item border-bottom'
+                        onClick={() => sortProducts('most seller')}
+                    >الأكثر مبيعا</div>
+                    <div
+                        className='card-filter-item border-bottom'
+                        onClick={() => sortProducts('most rating')}
+                    >الأعلى تقييما</div>
+                    <div
+                        className='card-filter-item border-bottom'
+                        onClick={() => sortProducts('low to high price')}
+                    >السعر من الأقل للأعلى</div>
+                    <div
+                        className='card-filter-item'
+                        onClick={() => sortProducts('high to low price')}
+                    >السعر من الأعلى للأقل</div>
                 </div>
                 </UnopDropdown>
             </div>

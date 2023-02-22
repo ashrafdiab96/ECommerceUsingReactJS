@@ -4,23 +4,26 @@ import Multiselect from 'multiselect-react-dropdown';
 import add from '../../../assets/images/add.png';
 import MultiImageInput from 'react-multiple-image-input';
 import { CompactPicker } from 'react-color';
-import AddProductHook from '../../../hook/products/add-product-hook';
+import EditProductAdminHook from '../../../hook/admin/edit-product-admin-hook';
 import { ToastContainer } from 'react-toastify';
+import { useParams } from 'react-router-dom';
 
-const AdminAddProduct = () => {
+const AdminEditProduct = () => {
+    const {id} = useParams();
     const [
         crop, images, setImages, prodName, setProdName, prodDesc, setProdDesc, 
         priceBefore, setPriceBefore, priceAfter, setPriceAfter, qty, setQty,
         brandId, colors, showColor, onChangeColor, options, isPress, loading,
         categories, onSelectCategory, onSelectParentCat, onRemoveParentCat,
-        onSelectedBrand, brands, removeColor, handleColorChange, handleSubmit
-    ] = AddProductHook();
+        onSelectedBrand, brands, removeColor, handleColorChange, handleSubmit,
+        catId
+    ] = EditProductAdminHook(id);
 
     return (
         <div style={{ minHeight: '670px' }}>
             <div className='admin-add-brand'>
                 <Row className="justify-content-start ">
-                    <h4 className="pb-4 text-center"> اضافه منتج جديد</h4>
+                    <h4 className="pb-4 text-center"> تعديل منتج</h4>
                     <Col sm={12}>
                         <div className="text-form pb-2"> صور للمنتج</div>
                         <MultiImageInput
@@ -74,7 +77,7 @@ const AdminAddProduct = () => {
                             placeholder="الكمية المتاحة"
                         />
                         <select
-                            // value={catId}
+                            value={catId}
                             onChange={onSelectCategory}
                             name="cats"
                             className="admin-add-select mt-3 px-2 ">
@@ -168,4 +171,4 @@ const AdminAddProduct = () => {
     );
 }
 
-export default AdminAddProduct;
+export default AdminEditProduct;

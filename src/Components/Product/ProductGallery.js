@@ -4,29 +4,32 @@ import ImageGallery from 'react-image-gallery';
 import mobile from '../../assets/images/mobile.png';
 import LeftButton from './LeftButton';
 import RightButton from './RightButton';
+import { useParams } from 'react-router-dom';
+import GetProductDetailsHook from '../../hook/products/get-product-details-hook';
 
 const ProductGallery = () => {
-    const images = [
-        {
+    const {id} = useParams();
+    const [item] = GetProductDetailsHook(id);
+
+    let imgs = [];
+    if (item.images) {
+        imgs = item.images.map((img) => {
+            return {
+                original: img,
+                thumbnail: img,
+            };
+        });
+    } else {
+        imgs = [{
             original: `${mobile}`,
             thumbnail: `${mobile}`,
-        },
-        {
-            original: `${mobile}`,
-            thumbnail: `${mobile}`,
-        },
-        {
-            original: `${mobile}`,
-            thumbnail: `${mobile}`,
-        },
-    ];
+        }];
+    }
+    const images = imgs;
 
     return (
         <div
-            className="
-                product-gallary-card d-flex justfiy-content-center align-items-center
-                pt-2
-            "
+            className="product-gallary-card d-flex justfiy-content-center align-items-start"
         >
             <ImageGallery
                 items={images}

@@ -26,8 +26,9 @@ const AdminAddSubCategory = () => {
                             name="categories" id="cat"
                             className="admin-add-select mt-3 px-2 "
                             onChange={handleIdChange}
+                            value={id}
                         >
-                            <option value="0">اختر تصنيف فرعي</option>
+                            <option value="0">اختر تصنيف رئيسي</option>
                             {categories.data ? (
                                 categories.data.map((item) => {
                                     return (

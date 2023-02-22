@@ -5,8 +5,12 @@ import login from '../../assets/images/login.png';
 import user from '../../assets/images/user.png';
 import cart from '../../assets/images/cart.png';
 import { Link } from 'react-router-dom';
+import NavbarSearchHook from '../../hook/search/navbar-search-hook';
 
 const NavBarLogin = () => {
+    const [searchWord, onSrarchWordChange] = NavbarSearchHook();
+    let word = localStorage.getItem('searchWord') ? localStorage.getItem('searchWord') : '';
+    
     return (
         <div>
             <Navbar className='sticky-top' bg="dark" variant='dark' expand="sm">
@@ -23,6 +27,8 @@ const NavBarLogin = () => {
                             placeholder="ابحث"
                             className="me-2 w-100"
                             aria-label="Search"
+                            onChange={onSrarchWordChange}
+                            value={word}
                         />
                         <Nav className="me-auto" >
                             <Link

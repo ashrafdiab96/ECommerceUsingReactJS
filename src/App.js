@@ -25,6 +25,7 @@ import UserAddressPage from "./Pages/User/Addresses/UserAddressPage";
 import UserAddAddressPage from "./Pages/User/Addresses/UserAddAddressPage";
 import UserEditAddressPage from "./Pages/User/Addresses/UserEditAddressPage";
 import UserEditProfilePage from "./Pages/User/Profile/UserEditProfilePage";
+import AdminEditProductPage from "./Pages/Admin/Products/AdminEditProductPage";
 
 const App = () => {
     return (
@@ -47,7 +48,6 @@ const App = () => {
                 <Route path="/user/addresses/add" element={<UserAddAddressPage />} />
                 <Route path="/user/addresses/:id/edit" element={<UserEditAddressPage />} />
                 <Route path="/user/editProfile" element={<UserEditProfilePage />} />
-
                 <Route path="/admin/dashboard" element={<AdminDashboardPage />} />
                 <Route path="/admin/products" element={<AdminProductsPAge />} />
                 <Route path="/admin/orders" element={<AdminOrdersPage />} />
@@ -56,6 +56,7 @@ const App = () => {
                 <Route path="/admin/addCategory" element={<AdminAddCategoryPage />} />
                 <Route path="/admin/addSubCategory" element={<AdminAddSubCategoryPage />} />
                 <Route path="/admin/addProduct" element={<AdminAddProductPage />} />
+                <Route path="/admin/editProduct/:id" element={<AdminEditProductPage />} />
             </Routes>
         </div>
     );

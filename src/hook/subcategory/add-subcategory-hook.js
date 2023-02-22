@@ -58,7 +58,7 @@ const AddSubcategoryHook = () => {
             if (res.status === 201) {
                 notify('تمت عملية الإضافة بنجاح', 'success');
             } else {
-                notify('فشلت عمليىة الإضافة', 'error');
+                notify('فشلت عملية الإضافة', 'error');
             }
             setLoading(true);
         }

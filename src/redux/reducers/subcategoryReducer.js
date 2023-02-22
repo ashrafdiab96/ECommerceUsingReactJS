@@ -1,5 +1,5 @@
 import {
-    CREATE_SUBCATEGORY, GET_ERROR,
+    CREATE_SUBCATEGORY, GET_ERROR, GET_SUBCATEGORIES_BY_CATID
 } from "../type";
 
 const initial = {
@@ -10,6 +10,11 @@ const initial = {
 const subcategoryReducer = (state = initial, action) => {
     switch (action.type) {
         case CREATE_SUBCATEGORY:
+            return {
+                subcategoriesData: action.payload,
+                loading: false,
+            };
+        case GET_SUBCATEGORIES_BY_CATID:
             return {
                 subcategoriesData: action.payload,
                 loading: false,

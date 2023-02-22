@@ -11,7 +11,7 @@ const AdminSideBar = () => {
             <div className="d-flex flex-column">
                 <div>
                     <p className='admin-layout-title'>
-                        <span>لوحة التحكم</span>
+                        <h3>لوحة التحكم</h3>
                         <div className='MuiDivider-root MuiDivider-fullWidth MuiDivider-light rtl-1ufgr6a'></div>
                     </p>
                 </div>

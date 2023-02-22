@@ -199,17 +199,17 @@ input[type=number] {
     padding: 5px;
     height: 35px;
     width: 90px;
-    color: #272727;
+    color: #6259ca;
     text-decoration: none;
     text-align: center;
-    border: 1px solid #272727;
+    border: 1px solid #6259ca;
     border-radius: 14px;
 }
 
 .shopping-now:hover {
-    background-color: #272727;
-    border: 1px solid #272727;
-    color: #f9f9f9;
+    background-color: #6259ca;
+    border: 1px solid #6259ca;
+    color: #FFFFFF;
     border-radius: 14px;
     cursor: pointer;
 }
@@ -303,6 +303,10 @@ input[type=number] {
     text-align: right;
 }
 
+.search-count-text .drop-down-menu_EMFQP {
+    left: 75% !important;
+}
+
 .card-filter {
     background-color: #ffffff;
     border-radius: 10px;
@@ -318,7 +322,7 @@ input[type=number] {
 }
 
 .card-filter-item:hover {
-    background-color: #272727;
+    background-color: #6259ca;
     color: #ffffff;
 }
 /* end card filter */
@@ -942,7 +946,7 @@ input[type=number] {
 .filter-title {
     color: #555550;
     font-family: "Almarai";
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bold;
     letter-spacing: 0;
     line-height: 20px;
@@ -952,16 +956,16 @@ input[type=number] {
 .filter-sub {
     color: #555550;
     font-family: "Almarai";
-    font-size: 12px;
+    font-size: 16px;
     letter-spacing: 0;
     line-height: 17px;
     text-align: center;
 }
 
 .filter-num-inp {
-    width: 60px;
+    width: 100px;
     height: 25px;
-    border: 1px solid #E0E0E0;
+    border: 1px solid #C0C0C0;
     border-radius: 5px;
     padding: 10px;
 }
@@ -1653,4 +1657,39 @@ input[type=number] {
 .sales-chart .recharts-surface {
     width: 100% !important;
     margin: 0 !important;
+}
+
+.products-side-search {
+    background-color: #ffffff !important;
+    border-radius: 20px !important;
+}
+
+.image-gallery {
+    width: 100%;
+    height: auto;
+    /* background-color: #E0E0E0; */
+}
+
+.image-gallery-slide {
+    /* height: auto; */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.image-gallery-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: cover;
+    overflow: hidden;
+    object-position: center center;
+}
+
+.item-flat {
+    border-radius: 0 !important;
+}
+
+.modal-content {
+    border-radius: 0 !important;
 }
