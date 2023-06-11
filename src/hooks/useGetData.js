@@ -12,4 +12,22 @@ const useGetData = async (url, params) => {
     return res.data;
 };
 
-export default useGetData;
+/**
+ * @hook useGetDataToken
+ * @desc fetch data by token from an API
+ * @param {*} url
+ * @returns {Response}
+ */
+const useGetDataToken = async (url) => {
+    const token = localStorage.getItem("token");
+    let config = {};
+    if (token) {
+        config = {
+            headers: { Authorization: `Bearer ${token}` }
+        }
+    }
+    const res = await baseUrl.get(url, config);
+    return res.data;
+};
+
+export { useGetData, useGetDataToken };

@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Container, Offcanvas, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import user from '../../assets/images/user.png';
+import userNoImg from '../../assets/images/user.png';
+import login from '../../assets/images/login.png';
 import AllCategoryPageHook from '../../hook/categories/all-category-page-hook';
 
 const CategoryHeader = () => {
@@ -9,6 +10,10 @@ const CategoryHeader = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [categories, loading, pageCount, getPage] = AllCategoryPageHook();
+    const [user, setUser] = useState('');
+    useEffect(() => {
+        localStorage.getItem('user') ? setUser(JSON.parse(localStorage.getItem('user'))) : setUser('');
+    }, []);
 
     return (
         <div className='category-header text-center'>
@@ -54,8 +59,28 @@ const CategoryHeader = () => {
             <Offcanvas show={show} onHide={handleClose}>
                 <Offcanvas.Header className='category-side-nav'>
                     <Offcanvas.Title className='d-flex align-items-center'>
-                        <img src={user} className='cat-user-img' alt='user' />
-                        <span className='mx-3'>مرحبا, أشرف دياب</span>
+                        {
+                            user !== '' ? (
+                                <div>
+                                    {
+                                        user.profileImg ? (
+                                            <img src={user.profileImg} className='cat-user-img' alt='user' />
+                                        ) : (
+                                            <img src={userNoImg} className='cat-user-img' alt='user' />
+                                        )
+                                    }
+                                    <span className='mx-3'>مرحبا, {user.name}</span>
+                                </div>
+                            ) : (
+                                <Link
+                                    to='/login'
+                                    className='nav-text d-flex mx-3 align-items-center justify-content-center text-decoration-none'
+                                >
+                                    <img src={login} className='login-img mx-1' alt='login icon' />
+                                    <p className='m-0' style={{ color: 'white' }}>دخول</p>
+                                </Link>
+                            )
+                        }
                     </Offcanvas.Title>
                     <div onClick={handleClose} className='category-side-close'>
                         <i className='fa fa-close'></i>

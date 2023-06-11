@@ -26,6 +26,7 @@ import UserAddAddressPage from "./Pages/User/Addresses/UserAddAddressPage";
 import UserEditAddressPage from "./Pages/User/Addresses/UserEditAddressPage";
 import UserEditProfilePage from "./Pages/User/Profile/UserEditProfilePage";
 import AdminEditProductPage from "./Pages/Admin/Products/AdminEditProductPage";
+import ForgetPasswordPage from "./Pages/Auth/ForgetPasswordPage";
 
 const App = () => {
     return (
@@ -48,6 +49,7 @@ const App = () => {
                 <Route path="/user/addresses/add" element={<UserAddAddressPage />} />
                 <Route path="/user/addresses/:id/edit" element={<UserEditAddressPage />} />
                 <Route path="/user/editProfile" element={<UserEditProfilePage />} />
+                <Route path="/user/forget-password" element={<ForgetPasswordPage />} />
                 <Route path="/admin/dashboard" element={<AdminDashboardPage />} />
                 <Route path="/admin/products" element={<AdminProductsPAge />} />
                 <Route path="/admin/orders" element={<AdminOrdersPage />} />

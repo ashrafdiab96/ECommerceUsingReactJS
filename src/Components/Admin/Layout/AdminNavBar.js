@@ -64,6 +64,12 @@ const AdminNavBar = () => {
                                     <h4>أشرف دياب</h4>
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider className='mb-0' />
+                                <Link to='/' className='admin-nav-drop text-decoration-none'>
+                                    {/* <NavDropdown.Item className='admin-nav-drop'> */}
+                                        المتجر
+                                    {/* </NavDropdown.Item> */}
+                                </Link>
+                                <NavDropdown.Divider className='m-0' />
                                 <NavDropdown.Item href="#" className='admin-nav-drop'>
                                     معلومات الحساب
                                 </NavDropdown.Item>
